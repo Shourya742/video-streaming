@@ -3,6 +3,8 @@ import ffmpeg from "fluent-ffmpeg";
 
 const app = express();
 const port = process.env.PORT || 3000;
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.post("/process-video", (req, res) => {
   const inputFilePath = req.body.inputFilePath;
